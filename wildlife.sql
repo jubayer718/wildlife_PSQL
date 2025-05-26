@@ -74,3 +74,17 @@ FROM sightings;
 -- problem--3
 
 SELECT * FROM sightings WHERE location LIKE '%Pass%';
+
+-- problem--4
+
+SELECT rangers.ranger_name, COUNT(sightings.sighting_id) AS total_sightings
+FROM rangers
+LEFT JOIN sightings ON rangers.ranger_id = sightings.ranger_id
+GROUP BY rangers.ranger_name
+ORDER BY rangers.ranger_name;
+
+-- problems--5
+
+SELECT species.common_name from  species
+LEFT JOIN sightings ON species.species_id = sightings.species_id
+WHERE sightings.sighting_id IS NULL;
