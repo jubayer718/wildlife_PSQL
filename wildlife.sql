@@ -91,13 +91,17 @@ WHERE sightings.sighting_id IS NULL;
 
 -- problems--6
 
-
-SELECT 
-  species.common_name, 
-  sightings.sightings_time, 
-  rangers.ranger_name
-FROM sightings
+SELECT
+species.common_name,
+sightings.sightings_time,
+rangers.ranger_name
+from sightings
 JOIN species ON sightings.species_id = species.species_id
 JOIN rangers ON sightings.ranger_id = rangers.ranger_id
-ORDER BY sightings.sightings_time DESC
+ORDER BY sightings.sightings_time DESC 
 LIMIT 2;
+
+--problem--7
+UPDATE species 
+ SET conservation_status = 'Historic'
+ WHERE discovery_date < '1800-01-01';
