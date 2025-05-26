@@ -88,3 +88,16 @@ ORDER BY rangers.ranger_name;
 SELECT species.common_name from  species
 LEFT JOIN sightings ON species.species_id = sightings.species_id
 WHERE sightings.sighting_id IS NULL;
+
+-- problems--6
+
+
+SELECT 
+  species.common_name, 
+  sightings.sightings_time, 
+  rangers.ranger_name
+FROM sightings
+JOIN species ON sightings.species_id = species.species_id
+JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+ORDER BY sightings.sightings_time DESC
+LIMIT 2;
