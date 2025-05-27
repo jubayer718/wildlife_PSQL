@@ -32,7 +32,29 @@ where fined the row that's contins the country USA;
 #### What is the difference between the VARCHAR and CHAR data types?
 
 * CHAR: CHAR data type is take full space even we push some value.
+  
+  
+ ```
+ CREATE TABLE test1 (
+  name CHAR(10)
+);
+
+INSERT INTO test1 VALUES ('Cat') 
+Cat (7 spaces will be filled)
+```
+
+
+
 * VARCHAR: VARCHAR data type is take only needed space.
+
+```
+ CREATE TABLE test1 (
+  name VARCHAR(10)
+);
+INSERT INTO test1 VALUES ('Cat') 
+Cat (keep only three letters)
+```
+
 * CHAR: Automatically fill in spaces.
 * VARCHAR: Nothing adds up.
 
