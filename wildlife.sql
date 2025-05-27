@@ -109,11 +109,11 @@ UPDATE species
 --problem--8
 
 SELECT 
-sightings.sightings_id,
+
 sightings.sightings_time,
 CASE 
   WHEN extract(HOUR FROM sightings.sightings_time) < 12 THEN 'morning'
-  WHEN extract(HOUR sightings.sightings_time) BETWEEN 12 AND 17 THEN 'afternoon' 
+  WHEN extract(HOUR FROM sightings.sightings_time) BETWEEN 12 AND 17 THEN 'afternoon' 
   ELSE  'evening'
 END as time_of_the_day
 FROM sightings;
