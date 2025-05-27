@@ -20,10 +20,14 @@
 #### Explain the purpose of the WHERE clause in a SELECT statement?
 
 * SELECT: when we need see all table info and handle a operation then we use SELECT clause.
-
+```
 for example: SELECT * from Table_name and SELECT * from Table_name ORDER_BY Column name.
-
+```
 * WHERE: where clause mainly used for conditionally handle operation and get value from the table.
+```
+SELECT * FROM students WHERE country = 'USA';
+```
+where fined the row that's contins the country USA;
 
 #### What is the difference between the VARCHAR and CHAR data types?
 
